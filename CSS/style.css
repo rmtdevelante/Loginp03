@@ -1,0 +1,100 @@
+body {/*Toda la parte visible será afectada*/
+    background-color: cyan;/*Color de fondo Azul claro*/
+    text-align: center;/*Todo el texto alineado al centro*/
+    align-items: center;/*Elementos alineados al centro*/
+    background-image: url(/imagenes/compu.png);/*Imagen de fondo con su ruta de ubicación*/
+    padding: 0;/*Ningún espacio de relleno*/
+    margin: 0; /* Elimina márgenes del body */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    display: flex; /* Usa flexbox en el body */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    overflow: hidden;/*Para sobre salir del área visible*/
+}
+
+.titulo {/*Elemento cuyo class es "titulo"*/
+    color: brown;/*color de las letras del elemento color vino*/
+}
+
+.btn {/*Elemento cuyo class es "btn"*/
+    color: red;/*Color de las letras será rojo*/
+    width: 100px;/*ancho de 100 pixeles*/
+    height: 50px;/*largo de 50 pixeles*/
+}
+
+.titulo2 {/*elemento cuyo class es titulo2*/
+    text-align: center;/*Establece el texto al centro de la página*/
+    align-items: center;/*Establece los elementos al centro de la página*/
+}
+
+#videoFondo {
+    position: fixed;/* Establece la posición del elemento fija en relación con la ventana del navegador. */
+    top: 0;/*Coloca el elemento en la parte superior de la ventana del navegador. */
+    left: 0;/* Coloca el elemento en el extremo izquierdo de la ventana del navegador. */
+    width: 100%;/* Establece el ancho del elemento al 100% del ancho de la ventana del navegador. */
+    height: 100%;/* Establece la altura del elemento al 100% de la altura de la ventana del navegador. */
+    object-fit: cover;/* Ajusta el contenido del elemento para que cubra completamente el área asignada, 
+    manteniendo la proporción de aspecto. */
+    z-index: -1;/* Establece el índice Z del elemento, colocándolo detrás de otros elementos en la página. */
+}
+
+.contenedor {
+    display: flex; /* Establece el contenedor como un contenedor flexible */
+    flex-direction: column; /* Asegura que los elementos se alineen verticalmente */
+    align-items: center; /* Centra los elementos hijos verticalmente dentro del contenedor */
+    justify-content: center; /* Centra los elementos hijos horizontalmente dentro del contenedor */
+    margin: auto; /* Centra el contenedor horizontalmente en el documento */
+    max-width: 600px; /* Establece el ancho máximo del contenedor */
+    padding: 20px; /* Añade relleno alrededor del contenido del contenedor */
+    background-color: rgba(255, 255, 255, 0.5); /* Establece el color de fondo del contenedor con una opacidad
+     del 50% */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade un poco de sombra para el efecto glassmorphism */
+    border-radius: 10px; /* Bordes redondeados */
+}
+.hijo {/*Al igual que creamos un "id" creamos un "class" para poder estilar*/
+    padding: 20px; /* Añade relleno alrededor del contenido del elemento */
+    border-radius: 10px; /* Establece el radio de las esquinas del elemento */
+    background-color: rgba(255, 255, 255, 0.5); /* Establece el color de fondo del elemento con una opacidad 
+    del 50% */
+}
+
+/* Estilo base para varios tipos de inputs */
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="submit"] {
+    padding: 10px;/* Añade un relleno de 10 píxeles alrededor del contenido del input. */
+    margin-top: 5px;/* Añade un margen superior de 5 píxeles para separar los inputs. */
+    border: 1px solid #ccc;/* Establece un borde sólido de 1 píxel con color gris claro (#ccc). */
+    border-radius: 5px;/* Aplica un radio de borde de 5 píxeles para redondear las esquinas del input. */
+}
+
+/* Estilo específico para inputs de tipo "submit" */
+input[type="submit"] {
+    background-color: #28a745;/* Establece el color de fondo del botón de envío. */
+    color: #fff;/* Establece el color del texto del botón de envío. */
+    border: none;/* Elimina el borde del botón de envío. */
+    cursor: pointer;/* Establece el cursor al pasar sobre el botón de envío. */
+    margin-top: 20px;/* Añade un margen superior adicional de 20 píxeles para separar el botón de envío de otros 
+    elementos. */
+}
+
+/* Estilo para el estado de hover del botón de envío */
+input[type="submit"]:hover {
+    background-color: #218838;/* Cambia el color de fondo del botón de envío cuando se pasa el ratón por encima. */
+}
+
+/* Estilo para mensajes de éxito */
+.success {
+    color: green;/* Establece el color del texto para los mensajes de éxito en verde. */
+    text-align: center;/* Centra el texto de los mensajes de éxito. */
+    margin-top: 20px;/* Añade un margen superior de 20 píxeles para separar los mensajes de éxito de otros elementos. */
+}
+
+/* Estilo para mensajes de error */
+.error {
+    color: red;/* Establece el color del texto para los mensajes de error en rojo. */
+    text-align: center;/* Centra el texto de los mensajes de error. */
+    margin-top: 20px;/* Añade un margen superior de 20 píxeles para separar los mensajes de error de otros 
+    elementos. */
+}

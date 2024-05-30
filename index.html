@@ -1,0 +1,58 @@
+<!DOCTYPE html><!-- Informa al navegador qué versión de HTML se está utilizando (HTML5 en este caso). -->
+<html lang="es"><!-- Indica el inicio del documento HTML y establece el idioma del contenido en español. -->
+<head><!-- Inicio de la sección del encabezado, que contiene metadatos sobre el documento. -->
+    <meta charset="UTF-8"><!-- Establece la codificación de caracteres del documento a UTF-8. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Configura el viewport 
+        para un diseño adaptable a dispositivos móviles. -->
+    <link rel="stylesheet" href="CSS/style.css"><!-- Vincula una hoja de estilos CSS externa para aplicar 
+        estilos al documento. -->
+    <title>Password</title><!-- Establece el título del documento que se mostrará en la pestaña del navegador. -->
+</head>
+<body><!-- Contiene todo el contenido visible de la página. -->
+    <form action="/Loginp03/views/v_register.php" method="post"><!-- Inicia un formulario que envía datos a 
+        'v_register.php' usando el método POST. -->
+        <div class="contenedor"><!-- Un contenedor div con la clase 'contenedor' para agrupar elementos del
+             formulario. -->
+            <h1 class="titulo">LOGIN</h1><!-- Un encabezado h1 con la clase 'titulo' que muestra el título 
+                del formulario. -->
+            <ul><!-- Un elemento de lista no ordenada para agrupar las etiquetas y campos de entrada. -->
+                <label for="usrNombre">Nombre</label><!-- Etiqueta para el campo de texto del nombre de usuario. -->
+                <input type="text" id="usrNombre" name="usrNombre" placeholder="favor de ingresar dato"><!-- Campo
+                     de entrada de texto para el nombre de usuario. -->
+                <label for="password">Contraseña</label><!-- Etiqueta para el campo de entrada de contraseña. -->
+                <input type="password" id="password" name="password" placeholder="favor de ingresar datos"><!--Campo
+                     de entrada de contraseña. -->
+            </ul>
+            <button type="submit">Presione para confirmar</button><!-- Botón para enviar el formulario. -->
+        </div>
+        <button type="button" onclick="location.href='/Loginp03/views/select.php'">Mostrar Registros</button><!--Botón
+             para redirigir a 'select.php' y mostrar registros. -->
+        <select id="column" name="column"><!-- Menú desplegable para seleccionar una columna de la base de datos. -->
+            <option value="id">ID</option><!-- Opción para seleccionar la columna ID. -->
+            <option value="usrName">Nombre de usuario</option><!-- Opción para seleccionar la columna 
+                Nombre de usuario. -->
+            <option value="userPw">Contraseña</option><!-- Opción para seleccionar la columna Contraseña. -->
+            <option value="usrLastName">Apellido</option><!-- Opción para seleccionar la columna Apellido. -->
+            <option value="age">Edad</option><!-- Opción para seleccionar la columna Edad. -->
+        </select>
+        <!-- Botón para mostrar el campo seleccionado en el menú desplegable -->
+        <button type="button" onclick="mostrarCampo()">Muestra campo</button>
+    </form>
+
+    <!-- JavaScript para enviar la solicitud POST al archivo PHP -->
+    <script>
+        function mostrarCampo() {
+            var columnName = document.getElementById("column").value; // Obtiene el valor seleccionado del menú desplegable
+            var xhr = new XMLHttpRequest(); // Crea un nuevo objeto XMLHttpRequest
+            xhr.open("POST", "/Loginp03/views/procedure.php", true); // Configura la solicitud POST al archivo PHP
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); // Establece el encabezado de la solicitud
+            xhr.onreadystatechange = function() { // Define una función que se ejecuta cuando cambia el estado de la solicitud
+                if (xhr.readyState === 4 && xhr.status === 200) { // Comprueba si la solicitud ha finalizado y si la respuesta ha sido exitosa
+                    alert(xhr.responseText); // Muestra la respuesta del servidor en una alerta
+                }
+            };
+            xhr.send("column=" + columnName); // Envía la solicitud con el nombre de la columna seleccionada
+        }
+    </script>
+</body><!-- Cierre del cuerpo del documento. -->
+</html><!-- Cierre del documento HTML. -->
